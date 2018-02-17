@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="5dp">
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/voucher_code">
+
+                <com.nayra.gowhite.custom_views.MyEditText
+                    android:id="@+id/etVoucherCode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <Button
+                android:id="@+id/btn_apply"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bright_blue_rounded_corner_button"
+                android:text="@string/apply"
+                android:textColor="@android:color/white"
+                android:layout_margin="5dp"
+                android:layout_marginBottom="10dp" />
+
+            <Switch
+                android:id="@+id/swPaymentMethod"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/payment_method"
+                android:textOn="@string/card"
+                android:textOff="@string/cash"
+                android:layout_margin="10dp" />
+        </LinearLayout>
+
+
+    </ScrollView>
+</layout>

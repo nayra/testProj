@@ -1,0 +1,59 @@
+<resources>
+    <string name="app_name">JustMop</string>
+
+    <string name="book_now">BOOK NOW</string>
+    <string name="booked_before">BOOKED BEFORE</string>
+
+    <string name="settings_country_and_language">COUNTRY &amp; LANGUAGE SETTINGS</string>
+
+    <string name="already_member">Already a member?</string>
+
+    <string name="facebook_app_id">237924473417438</string>
+    <string name="fb_login_protocol_scheme">fb237924473417438</string>
+
+    <string name="login">login</string>
+    <string name="name">Name</string>
+    <string name="surname">Surname</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="phone">Phone (050 123 4567)</string>
+    <string name="change">Change</string>
+
+    <string name="need_cleaning_materials">Need Cleaning Materials ?</string>
+
+    <string name="cleaning_instructions">Cleaning Instructions</string>
+
+    <string name="next">Next ></string>
+
+
+    <string name="title_cleaning_details">Cleaning Details</string>
+    <string name="title_date_time">Date &amp; Time</string>
+    <string name="title_contact_details">Contact Details</string>
+
+    <string name="cleaning_time">What time would you like us to start?</string>
+    <string name="my_account">MY ACCOUNT</string>
+    <string name="full_address">Full Address</string>
+    <string name="HowIn">How will you let the cleaner in ?</string>
+    <string name="voucher_code">Voucher Code</string>
+    <string name="apply">Apply</string>
+    <string name="payment_method">Payment Method</string>
+    <string name="card">Card</string>
+    <string name="cash">Cash</string>
+    <string name="title_payment">Payment</string>
+    <string name="OrderDetails">Order Details</string>
+    <string name="repetition">Frequency</string>
+
+
+    <string name="title_summary">Summary</string>
+    <string name="date">Date</string>
+    <string name="time">Time</string>
+    <string name="duration">duration</string>
+    <string name="cleaners_num">Cleaners number</string>
+    <string name="cleaning_materials">Cleaning Materials</string>
+    <string name="price">Price</string>
+    <string name="ContactsInfo">Contact Information</string>
+    <string name="city">City</string>
+    <string name="area">Area</string>
+    <string name="address">Address</string>
+    <string name="reserve">Reserve</string>
+</resources>

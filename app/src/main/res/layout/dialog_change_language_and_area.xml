@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="5dp">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/settings_country_and_language"
+        android:textColor="@color/colorPrimary"
+        android:layout_margin="5dp" />
+
+    <Spinner
+        android:id="@+id/spCountries"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:entries="@array/countries"
+        android:spinnerMode="dialog">
+
+    </Spinner>
+
+    <Spinner
+        android:id="@+id/spLanguages"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:entries="@array/languages"
+        android:spinnerMode="dialog">
+
+    </Spinner>
+
+
+    <Button
+        android:id="@+id/btnChange"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/change"
+        android:textAllCaps="false"
+        android:background="@drawable/blue_rounded_corner_button"
+        android:textColor="@android:color/white"
+        android:layout_margin="10dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp" />
+</LinearLayout>

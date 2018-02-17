@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Go White</string>
+
+    <string name="book_now">احجز الآن</string>
+    <string name="booked_before">حجزت بالفعل</string>
+
+    <string name="settings_country_and_language">اعدادات الدولة و اللغة</string>
+
+    <string name="already_member">عضو بالفعل</string>
+
+    <string name="login">دخول</string>
+    <string name="name">الاسم الأول</string>
+    <string name="surname">الاسم الأخير</string>
+    <string name="email">البريد الإلكتروني</string>
+    <string name="password">كلمة المرور</string>
+    <string name="phone">رقم الهاتف (0501234567)</string>
+    <string name="change">تغيير</string>
+
+    <string name="need_cleaning_materials">بحاجة لمواد تنظيف ؟</string>
+
+    <string name="cleaning_instructions">تعليمات لجلسة التنظيف</string>
+
+    <string name="next">التالي ></string>
+
+    <string name="title_cleaning_details">تفاصيل جلسة التنظيف</string>
+
+    <string name="title_date_time">التاريخ و الوقت</string>
+
+    <string name="title_contact_details">معلومات التواصل</string>
+
+    <string name="cleaning_time">في أي وقت ترغب ببدء الجلسة؟</string>
+    <string name="my_account">حسابي</string>
+
+
+    <string name="full_address">العنوان كامل</string>
+    <string name="HowIn">كيف ستدخل عمال التنظيف إلى المنزل ؟</string>
+    <string name="voucher_code">كود القسيمة</string>
+    <string name="apply">تفعيل</string>
+    <string name="payment_method">آلية الدفع</string>
+    <string name="card">بطاقة</string>
+    <string name="cash">نقداً</string>
+    <string name="title_payment">الدفع</string>
+    <string name="OrderDetails">تفاصبل الطلب</string>
+    <string name="repetition">عدد الجلسات</string>
+
+    <string name="title_summary">ملخص</string>
+    <string name="date">التاريخ</string>
+    <string name="time">الوقت</string>
+    <string name="duration">المدة</string>
+    <string name="cleaners_num">عدد المنظفين</string>
+    <string name="cleaning_materials">موادالتنظيف</string>
+    <string name="price">السعر</string>
+    <string name="ContactsInfo">معلومات التواصل</string>
+    <string name="city">المدينة</string>
+    <string name="area">المنطقة</string>
+    <string name="address">العنوان</string>
+    <string name="reserve">إتمام الحجز</string>
+</resources>

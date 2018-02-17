@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="countries">
+        <item>United Arab Emirates</item>
+        <item>Qatar</item>
+        <item>Bahrain</item>
+    </array>
+
+    <array name="emirates_cities">
+        <item>Dubai</item>
+        <item>Abu Dhabi</item>
+        <item>Sharjah</item>
+    </array>
+
+    <array name="qatar_cities">
+        <item>Doha</item>
+    </array>
+
+    <array name="bahrain_cities">
+        <item>Bahrain</item>
+    </array>
+
+    <array name="languages">
+        <item>English</item>
+        <item>العربية</item>
+    </array>
+
+    <array name="Repetition">
+        <item>Once</item>
+        <item>Weekly</item>
+        <item>Bi-Weekly</item>
+    </array>
+
+    <array name="durations">
+        <item>2 Hours</item>
+        <item>3 Hours</item>
+        <item>4 Hours</item>
+        <item>5 Hours</item>
+        <item>6 Hours</item>
+        <item>7 Hours</item>
+        <item>8 Hours</item>
+    </array>
+
+    <array name="number_cleaners">
+        <item>1 Cleaner</item>
+        <item>2 Cleaners</item>
+        <item>3 Cleaners</item>
+        <item>4 Cleaners</item>
+    </array>
+
+    <array name="times">
+        <item>08:00</item>
+        <item>08:30</item>
+        <item>09:00</item>
+        <item>09:30</item>
+        <item>10:00</item>
+        <item>13:00</item>
+        <item>13:30</item>
+        <item>14:00</item>
+        <item>14:30</item>
+        <item>15:00</item>
+        <item>15:30</item>
+        <item>16:00</item>
+    </array>
+</resources>
