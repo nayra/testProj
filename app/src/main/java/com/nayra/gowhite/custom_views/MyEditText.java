@@ -18,5 +18,10 @@ public class MyEditText extends android.support.v7.widget.AppCompatEditText {
     public void setError(CharSequence error, Drawable icon) {
         setCompoundDrawables(null, null, icon, null);
     }
+
+    @Override
+    public void setError(CharSequence error) {
+        super.setError(error);
+    }
 }
 

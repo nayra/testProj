@@ -18,4 +18,16 @@ public class ErrorUtils {
         errorDrawable.setBounds(new Rect(0, 0, errorDrawable.getIntrinsicWidth(), errorDrawable.getIntrinsicHeight()));
         editText.setError("", errorDrawable);
     }
+
+    public static void setPasswordEditTextError(Context context, MyEditText editText) {
+        //final Drawable errorDrawable = context.getResources().getDrawable(R.drawable.ic_error);
+        //errorDrawable.setBounds(new Rect(0, 0, errorDrawable.getIntrinsicWidth(), errorDrawable.getIntrinsicHeight()));
+        editText.setError(context.getResources().getString(R.string.error_password_msg));
+    }
+
+    public static void removeEditTextError(Context context, MyEditText editText) {
+        // final Drawable errorDrawable = context.getResources().getDrawable(R.drawable.ic_error);
+        // errorDrawable.setBounds(new Rect(0, 0, 0, 0));
+        editText.setError("", null);
+    }
 }

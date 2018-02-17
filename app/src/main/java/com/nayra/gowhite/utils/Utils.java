@@ -3,6 +3,8 @@ package com.nayra.gowhite.utils;
 import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
+import android.util.Patterns;
 import android.view.Window;
 import android.view.WindowManager;
 
@@ -48,6 +50,9 @@ public class Utils {
         currentActivity.overridePendingTransition(0, 0);
     }
 
+    public final static boolean isValidEmail(CharSequence target) {
+        return (!TextUtils.isEmpty(target) && Patterns.EMAIL_ADDRESS.matcher(target).matches());
+    }
 
     public static String getDate(long milliSeconds, String dateFormat) {
         SimpleDateFormat formatter = new SimpleDateFormat(dateFormat);

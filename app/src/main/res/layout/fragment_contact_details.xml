@@ -15,7 +15,8 @@
             android:id="@+id/linear_not_registered"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:visibility="gone">
 
             <TextView
                 android:layout_width="match_parent"
@@ -31,12 +32,12 @@
                 android:orientation="horizontal"
                 android:gravity="center">
 
-                <com.facebook.login.widget.LoginButton
+                <!--<com.facebook.login.widget.LoginButton
                     android:id="@+id/btn_fb_login"
                     android:layout_width="0dp"
                     android:layout_weight="0.5"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center" />
+                    android:layout_gravity="center" />-->
 
                 <Button
                     android:layout_width="0dp"
@@ -80,7 +81,7 @@
             android:layout_height="wrap_content"
             android:hint="@string/email">
 
-            <com.nayra.gowhite.custom_views.MyEditText
+            <EditText
                 android:id="@+id/etEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -93,11 +94,12 @@
             android:layout_height="wrap_content"
             android:hint="@string/password">
 
-            <com.nayra.gowhite.custom_views.MyEditText
+            <EditText
                 android:id="@+id/etPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPassword" />
+                android:inputType="textPassword"
+                android:hint="@string/password" />
 
         </android.support.design.widget.TextInputLayout>
 

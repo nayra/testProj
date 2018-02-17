@@ -8,7 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.nayra.gowhite.R;
-import com.nayra.gowhite.model.Country;
+import com.nayra.gowhite.model.City;
 import com.nayra.gowhite.utils.SharedPrefsUtil;
 
 import java.util.ArrayList;
@@ -17,17 +17,16 @@ import java.util.ArrayList;
  * Created by nayrael-sayed on 2/17/18.
  */
 
-public class SpinnerCustomAdapter extends BaseAdapter {
-
+public class SpinnerCityCustomAdapter extends BaseAdapter {
     private Context context;
-    private ArrayList<Country> country = new ArrayList<>();
+    private ArrayList<City> cities = new ArrayList<>();
     private LayoutInflater layoutInflater;
 
     private int selected_lang_index = 0;
 
-    public SpinnerCustomAdapter(Context applicationContext, ArrayList<Country> country) {
+    public SpinnerCityCustomAdapter(Context applicationContext, ArrayList<City> cities) {
         this.context = applicationContext;
-        this.country = country;
+        this.cities = cities;
         layoutInflater = (LayoutInflater.from(applicationContext));
 
         selected_lang_index = SharedPrefsUtil.getInteger(SharedPrefsUtil.SELECTED_LANGUAGE_INDEX);
@@ -35,7 +34,7 @@ public class SpinnerCustomAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return country.size();
+        return cities.size();
     }
 
     @Override
@@ -55,9 +54,9 @@ public class SpinnerCustomAdapter extends BaseAdapter {
         TextView names = view.findViewById(R.id.textView);
 
         if (selected_lang_index == 0)
-            names.setText(country.get(i).getEn_name());
+            names.setText(cities.get(i).getEn_name());
         else {
-            names.setText(country.get(i).getAr_name());
+            names.setText(cities.get(i).getAr_name());
         }
 
         return view;

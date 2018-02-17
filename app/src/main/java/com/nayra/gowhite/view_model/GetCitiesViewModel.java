@@ -9,7 +9,7 @@ import com.nayra.gowhite.Constants;
 import com.nayra.gowhite.R;
 import com.nayra.gowhite.interfaces.Updatable;
 import com.nayra.gowhite.interfaces.WebServices;
-import com.nayra.gowhite.model.Country;
+import com.nayra.gowhite.model.City;
 import com.nayra.gowhite.network.ApiServices;
 import com.nayra.gowhite.network.RetrofitClient;
 import com.nayra.gowhite.utils.NetworkConnectionUtil;
@@ -25,55 +25,53 @@ import retrofit2.Response;
  * Created by nayrael-sayed on 2/17/18.
  */
 
-public class GetCountriesViewModel {
-    private static final String TAG = GetCountriesViewModel.class.getSimpleName();
-    private static GetCountriesViewModel instance = new GetCountriesViewModel();
-
-    private Updatable updatable;
+public class GetCitiesViewModel {
+    private static final String TAG = GetCitiesViewModel.class.getSimpleName();
+    private static GetCitiesViewModel instance = new GetCitiesViewModel();
 
     @SerializedName("Result")
-    private ArrayList<Country> countries = new ArrayList<>();
+    private ArrayList<City> cities = new ArrayList<>();
 
     @SerializedName("ErrorMessage")
     private String error_msg = "";
 
-    public static GetCountriesViewModel getInstance() {
+    private Updatable updatable;
+
+    public static GetCitiesViewModel getInstance() {
         if (instance == null) {
-            instance = new GetCountriesViewModel();
+            instance = new GetCitiesViewModel();
         }
         return instance;
     }
 
-    public void getCountries(final Context context, final Updatable updatable) {
-        if (instance.countries.size() == 0) {
+    public void getCities(int country_id, Context context, final Updatable updatable) {
+        //if (instance.cities.size() == 0)
+        {
             this.updatable = updatable;
             if (NetworkConnectionUtil.isNetworkAvailable(context)) {
                 ProgressUtils.show(context);
                 final ApiServices apiService = RetrofitClient.retrofit(Constants.base_url).create(ApiServices.class);
 
-                final Call<GetCountriesViewModel> call = apiService.getCountries();
-                //Log.d(TAG,call.request().body().toString());
+                final Call<GetCitiesViewModel> call = apiService.getCities(country_id);
 
-                call.enqueue(new Callback<GetCountriesViewModel>() {
+                call.enqueue(new Callback<GetCitiesViewModel>() {
                     @Override
-                    public void onResponse(Call<GetCountriesViewModel> call, Response<GetCountriesViewModel> response) {
+                    public void onResponse(Call<GetCitiesViewModel> call, Response<GetCitiesViewModel> response) {
                         instance = response.body();
                         if (instance != null) {
                             Log.d(TAG, instance.toString());
                         } else {
                             Log.d(TAG, "null");
                         }
-
+                        updatable.update(WebServices.CITIES);
                         ProgressUtils.dismiss();
-                        updatable.update(WebServices.COUNTRIES);
                     }
 
                     @Override
-                    public void onFailure(Call<GetCountriesViewModel> call, Throwable t) {
+                    public void onFailure(Call<GetCitiesViewModel> call, Throwable t) {
                         Log.e(TAG, "failure");
 
                         ProgressUtils.dismiss();
-                        updatable.onFailure();
                     }
                 });
             } else {
@@ -82,7 +80,7 @@ public class GetCountriesViewModel {
         }
     }
 
-    public ArrayList<Country> getCountries() {
-        return countries;
+    public ArrayList<City> getCities() {
+        return cities;
     }
 }

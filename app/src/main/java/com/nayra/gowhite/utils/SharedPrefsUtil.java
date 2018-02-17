@@ -9,6 +9,8 @@ import android.content.SharedPreferences;
 
 public class SharedPrefsUtil {
 
+    public static final String SELECTED_CITY_NAME = "SELECTED_CITY_NAME";
+    public static final String SELECTED_AREA_NAME = "SELECTED_AREA_NAME";
     private static SharedPreferences prefs;
     private static SharedPreferences.Editor editor;
 

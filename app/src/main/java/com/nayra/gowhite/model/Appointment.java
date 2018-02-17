@@ -1,10 +1,13 @@
 package com.nayra.gowhite.model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 /**
  * Created by nayrael-sayed on 2/16/18.
  */
 
-public class Appointment {
+public class Appointment implements Parcelable {
 
     private int type;
     private String StartDate; //:01-01-2018 13:30
@@ -17,6 +20,9 @@ public class Appointment {
     private int areaID;
     private int cityId;
     private String PhoneNumber;
+
+    public Appointment() {
+    }
 
     public int getType() {
         return type;
@@ -122,4 +128,51 @@ public class Appointment {
                 ", PhoneNumber='" + PhoneNumber + '\'' +
                 '}';
     }
+
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(this.type);
+        dest.writeString(this.StartDate);
+        dest.writeString(this.Address);
+        dest.writeInt(this.Duration);
+        dest.writeInt(this.amount);
+        dest.writeInt(this.payment_method);
+        dest.writeByte(this.wantCleaningMatrial ? (byte) 1 : (byte) 0);
+        dest.writeString(this.cleaningInstructions);
+        dest.writeInt(this.areaID);
+        dest.writeInt(this.cityId);
+        dest.writeString(this.PhoneNumber);
+    }
+
+    protected Appointment(Parcel in) {
+        this.type = in.readInt();
+        this.StartDate = in.readString();
+        this.Address = in.readString();
+        this.Duration = in.readInt();
+        this.amount = in.readInt();
+        this.payment_method = in.readInt();
+        this.wantCleaningMatrial = in.readByte() != 0;
+        this.cleaningInstructions = in.readString();
+        this.areaID = in.readInt();
+        this.cityId = in.readInt();
+        this.PhoneNumber = in.readString();
+    }
+
+    public static final Creator<Appointment> CREATOR = new Creator<Appointment>() {
+        @Override
+        public Appointment createFromParcel(Parcel source) {
+            return new Appointment(source);
+        }
+
+        @Override
+        public Appointment[] newArray(int size) {
+            return new Appointment[size];
+        }
+    };
 }

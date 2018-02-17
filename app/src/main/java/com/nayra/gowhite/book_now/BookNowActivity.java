@@ -10,13 +10,21 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.nayra.gowhite.R;
+import com.nayra.gowhite.interfaces.Updatable;
+import com.nayra.gowhite.interfaces.WebServices;
 import com.nayra.gowhite.model.Appointment;
+import com.nayra.gowhite.model.UserInfo;
 import com.nayra.gowhite.utils.FragmentUtils;
+import com.nayra.gowhite.utils.SharedPrefsUtil;
 import com.nayra.gowhite.utils.Utils;
+import com.nayra.gowhite.view_model.AddAppointmentViewModel;
+import com.nayra.gowhite.view_model.RegisterViewModel;
+import com.nayra.gowhite.view_model.SearchByPhoneViewModel;
 
-public class BookNowActivity extends AppCompatActivity {
+public class BookNowActivity extends AppCompatActivity implements Updatable {
 
     private static final String TAG = BookNowActivity.class.getSimpleName();
 
@@ -25,12 +33,13 @@ public class BookNowActivity extends AppCompatActivity {
 
     private int booking_step_number = 1;
     public static Appointment appointmentDetails;
+    public static UserInfo userInfo;
 
     private TextView txtTitle;
     private DateTimeFragment dateTimeFragment;
     private ContactDetailsFragment contactDetailsFragment;
     private CleaningDetailsFragment cleaningDetailsFragment;
-    private PaymentFragment paymentFragment;
+    // private PaymentFragment paymentFragment;
     private OrderSummaryFragment orderSummaryFragment;
 
     public static void startActivityAsAlreadyBooked(final AppCompatActivity appCompatActivity) {
@@ -53,6 +62,8 @@ public class BookNowActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         appointmentDetails = new Appointment();
+        userInfo = new UserInfo();
+
         getIntentValue();
 
         initView();
@@ -119,19 +130,27 @@ public class BookNowActivity extends AppCompatActivity {
             booking_step_number += 1;
         } else if (booking_step_number == 3) {
             contactDetailsFragment.getContactDetails();
+            boolean canNavigate = contactDetailsFragment.validateInfo();
             Log.d(TAG, appointmentDetails.toString());
-            paymentFragment = new PaymentFragment();
-            txtTitle.setText(getResources().getString(R.string.title_payment));
-            FragmentUtils.addFragment(R.id.frame, this, paymentFragment, PaymentFragment.class.getSimpleName());
-            booking_step_number += 1;
+            if (canNavigate) {
+                orderSummaryFragment = new OrderSummaryFragment();
+                final Bundle bundle = new Bundle();
+                bundle.putParcelable(OrderSummaryFragment.appointmentStr, appointmentDetails);
+                bundle.putParcelable(OrderSummaryFragment.userInfoStr, userInfo);
+                orderSummaryFragment.setArguments(bundle);
+                txtTitle.setText(getResources().getString(R.string.title_summary));
+                FragmentUtils.addFragment(R.id.frame, this, orderSummaryFragment, OrderSummaryFragment.class.getSimpleName());
+                booking_step_number += 1;
+            }
         } else if (booking_step_number == 4) {
-            paymentFragment.getPaymentDetails();
-            orderSummaryFragment = new OrderSummaryFragment();
-            txtTitle.setText(getResources().getString(R.string.title_summary));
-            FragmentUtils.addFragment(R.id.frame, this, orderSummaryFragment, OrderSummaryFragment.class.getSimpleName());
-            booking_step_number += 1;
+            searchByPhone();
         }
     }
+
+    private void searchByPhone() {
+        SearchByPhoneViewModel.getInstance().searchByPhone(userInfo.getPhone(), this, this);
+    }
+
 
     @Override
     public void onBackPressed() {
@@ -149,5 +168,47 @@ public class BookNowActivity extends AppCompatActivity {
             appointmentDetails = new Appointment();
             finish();
         }
+    }
+
+    private void registerOrContinue() {
+        UserInfo result_userInfo = SearchByPhoneViewModel.getInstance().getUserInfo();
+        if (result_userInfo == null) {
+            int country_id = SharedPrefsUtil.getInteger(SharedPrefsUtil.SELECTED_COUNTRY_ID);
+            RegisterViewModel.getInstance().register(userInfo, country_id, this, this);
+        } else {
+            addAppointment();
+        }
+    }
+
+    private void addAppointment() {
+        UserInfo result_userInfo = RegisterViewModel.getInstance().getUserInfo();
+        if (result_userInfo == null) {
+            Toast.makeText(this, RegisterViewModel.getInstance().getError_msg(), Toast.LENGTH_LONG).show();
+        } else {
+            AddAppointmentViewModel.getInstance().addAppointment(appointmentDetails, this, this);
+        }
+    }
+
+    @Override
+    public void update(WebServices api) {
+        switch (api) {
+            case SEARCH:
+                registerOrContinue();
+                break;
+
+            case REGISTER:
+                addAppointment();
+                break;
+
+            case ADD_APPOINTMENT:
+                Toast.makeText(this, "Appointment added", Toast.LENGTH_LONG).show();
+                this.finish();
+                break;
+        }
+    }
+
+    @Override
+    public void onFailure() {
+
     }
 }
