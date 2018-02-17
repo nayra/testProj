@@ -2,38 +2,47 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_margin="5dp"
-        android:background="@android:color/white">
+        android:layout_height="match_parent">
 
-        <CalendarView
-            android:id="@+id/calendarView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:text="@string/cleaning_time"
-            android:textColor="@color/grey"
-            android:gravity="center" />
+            android:layout_margin="5dp"
+            android:background="@android:color/white"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
 
 
-        <Spinner
-            android:id="@+id/spTimes"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:entries="@array/times"
-            android:spinnerMode="dialog"></Spinner>
+            <DatePicker
+                android:id="@+id/datePicker"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@android:color/darker_gray"
-            android:layout_margin="5dp" />
-    </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:padding="10dp"
+                tools:text="@string/cleaning_time"
+                android:visibility="visible" />
+
+            <Spinner
+                android:id="@+id/spTimes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/times"
+                android:padding="10dp"
+                android:spinnerMode="dialog"></Spinner>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_margin="5dp"
+                android:background="@android:color/darker_gray" />
+        </LinearLayout>
+
+    </ScrollView>
 </layout>

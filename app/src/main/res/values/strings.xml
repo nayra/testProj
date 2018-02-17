@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">JustMop</string>
+    <string name="app_name">Go White</string>
 
     <string name="book_now">BOOK NOW</string>
     <string name="booked_before">BOOKED BEFORE</string>
@@ -8,8 +8,6 @@
 
     <string name="already_member">Already a member?</string>
 
-    <string name="facebook_app_id">237924473417438</string>
-    <string name="fb_login_protocol_scheme">fb237924473417438</string>
 
     <string name="login">login</string>
     <string name="name">Name</string>
