@@ -1,4 +1,4 @@
-package com.nayra.gowhite.authentication;
+package com.nayra.gowhite.view_model;
 
 import android.util.Log;
 
@@ -15,15 +15,15 @@ import retrofit2.Response;
  * Created by nayrael-sayed on 2/16/18.
  */
 
-public class LoginViewModel {
-    private static final String TAG = LoginViewModel.class.getSimpleName();
-    private static LoginViewModel instance = new LoginViewModel();
+public class GetTokenViewModel {
+    private static final String TAG = GetTokenViewModel.class.getSimpleName();
+    private static GetTokenViewModel instance = new GetTokenViewModel();
 
     private static LoginResponse loginResponse;
 
-    public static LoginViewModel getInstance() {
+    public static GetTokenViewModel getInstance() {
         if (instance == null) {
-            instance = new LoginViewModel();
+            instance = new GetTokenViewModel();
         }
         return instance;
     }

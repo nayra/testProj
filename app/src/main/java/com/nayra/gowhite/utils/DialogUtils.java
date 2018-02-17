@@ -7,8 +7,13 @@ import android.widget.Button;
 import android.widget.Spinner;
 
 import com.nayra.gowhite.R;
+import com.nayra.gowhite.adapters.SpinnerCustomAdapter;
+import com.nayra.gowhite.model.Country;
+import com.nayra.gowhite.view_model.GetCountriesViewModel;
 import com.orhanobut.dialogplus.DialogPlus;
 import com.orhanobut.dialogplus.ViewHolder;
+
+import java.util.ArrayList;
 
 /**
  * Created by nayrael-sayed on 2/15/18.
@@ -21,7 +26,11 @@ public class DialogUtils {
     private static int new_selected_country_index = 0;
     private static int new_selected_language_index = 0;
 
+    private static ArrayList<Country> countries = new ArrayList<>();
     public static void showChooseLanguageAndAreaDialog(final Context context) {
+        countries = GetCountriesViewModel.getInstance().getCountries();
+
+        final SpinnerCustomAdapter adapter = new SpinnerCustomAdapter(context, countries);
 
         current_selected_country_index = SharedPrefsUtil.getInteger(SharedPrefsUtil.SELECTED_COUNTRY_INDEX);
         current_selected_language_index = SharedPrefsUtil.getInteger(SharedPrefsUtil.SELECTED_LANGUAGE_INDEX);
@@ -41,6 +50,7 @@ public class DialogUtils {
             public void onNothingSelected(final AdapterView<?> adapterView) {
             }
         });
+        countriesSpinner.setAdapter(adapter);
         countriesSpinner.setSelection(current_selected_country_index);
 
         final Spinner languagesSpinner = (Spinner) dialog.findViewById(R.id.spLanguages);

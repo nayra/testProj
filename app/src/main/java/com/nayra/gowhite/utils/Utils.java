@@ -14,7 +14,6 @@ import java.util.Calendar;
  */
 
 public class Utils {
-
     public static void setFullScreen(Activity activity) {
         activity.requestWindowFeature(Window.FEATURE_NO_TITLE);
         activity.getWindow().setFlags(

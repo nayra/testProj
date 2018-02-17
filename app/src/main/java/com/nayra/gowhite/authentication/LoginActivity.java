@@ -13,6 +13,7 @@ import com.facebook.login.widget.LoginButton;
 import com.nayra.gowhite.R;
 import com.nayra.gowhite.custom_views.MyEditText;
 import com.nayra.gowhite.utils.ErrorUtils;
+import com.nayra.gowhite.view_model.GetTokenViewModel;
 
 import java.util.Arrays;
 
@@ -84,7 +85,7 @@ public class LoginActivity extends AppCompatActivity {
         }
 
         if (!email.isEmpty() && !password.isEmpty()) {
-            LoginViewModel.getInstance().login("password", password, email);
+            GetTokenViewModel.getInstance().login("password", password, email);
         }
     }
 }

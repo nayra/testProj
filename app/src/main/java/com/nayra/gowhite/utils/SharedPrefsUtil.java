@@ -14,7 +14,8 @@ public class SharedPrefsUtil {
 
     private static final String FILE_NAME = "User_Prefs";
 
-    public static final String SELECTED_COUNTRY_INDEX = "SELECTED_COUNTRY";
+    public static final String SELECTED_COUNTRY_ID = "SELECTED_COUNTRY";
+    public static final String SELECTED_COUNTRY_INDEX = "SELECTED_COUNTRY_INDEX";
     public static final String SELECTED_LANGUAGE_INDEX = "SELECTED_LANGUAGE";
     public static final String IS_LOGGED_IN = "IS_LOGGED_IN";
 
