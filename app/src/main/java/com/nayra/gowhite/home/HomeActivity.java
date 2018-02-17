@@ -12,12 +12,14 @@ import com.nayra.gowhite.R;
 import com.nayra.gowhite.authentication.LoginActivity;
 import com.nayra.gowhite.book_now.BookNowActivity;
 import com.nayra.gowhite.databinding.HomeMainBinding;
+import com.nayra.gowhite.interfaces.Updatable;
 import com.nayra.gowhite.utils.DialogUtils;
 import com.nayra.gowhite.utils.LanguageUtil;
 import com.nayra.gowhite.utils.SharedPrefsUtil;
 import com.nayra.gowhite.utils.Utils;
+import com.nayra.gowhite.view_model.GetCountriesViewModel;
 
-public class HomeActivity extends AppCompatActivity implements SharedPreferences.OnSharedPreferenceChangeListener {
+public class HomeActivity extends AppCompatActivity implements SharedPreferences.OnSharedPreferenceChangeListener, Updatable {
 
     private HomeMainBinding binding;
     private boolean isLoggedIn;
@@ -35,6 +37,7 @@ public class HomeActivity extends AppCompatActivity implements SharedPreferences
 
         initUI();
 
+        loadApis();
 
     }
 
@@ -95,11 +98,25 @@ public class HomeActivity extends AppCompatActivity implements SharedPreferences
         });
     }
 
-
+    private void loadApis() {
+        GetCountriesViewModel.getInstance().getCountries(this, this);
+    }
     @Override
     public void onSharedPreferenceChanged(final SharedPreferences sharedPreferences, final String s) {
         if (s.equalsIgnoreCase(SharedPrefsUtil.IS_LOGGED_IN)) {
             setButtonText();
         }
+    }
+
+    @Override
+    public void update() {
+
+    }
+
+    @Override
+    public void onFailure() {
+        // the Api is not stable
+        // After api fix , should remove the whole interface implementation
+        loadApis();
     }
 }

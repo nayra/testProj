@@ -6,4 +6,6 @@ package com.nayra.gowhite.interfaces;
 
 public interface Updatable {
     void update();
+
+    void onFailure();
 }
