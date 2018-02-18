@@ -21,6 +21,7 @@ import com.nayra.gowhite.utils.FragmentUtils;
 import com.nayra.gowhite.utils.SharedPrefsUtil;
 import com.nayra.gowhite.utils.Utils;
 import com.nayra.gowhite.view_model.AddAppointmentViewModel;
+import com.nayra.gowhite.view_model.AddAppointmentWithVendorViewModel;
 import com.nayra.gowhite.view_model.RegisterViewModel;
 import com.nayra.gowhite.view_model.SearchByPhoneViewModel;
 
@@ -41,6 +42,8 @@ public class BookNowActivity extends AppCompatActivity implements Updatable {
     private CleaningDetailsFragment cleaningDetailsFragment;
     // private PaymentFragment paymentFragment;
     private OrderSummaryFragment orderSummaryFragment;
+
+    private TextView txtDuration, txtTotalPrice, txtPricePerHour;
 
     public static void startActivityAsAlreadyBooked(final AppCompatActivity appCompatActivity) {
         final Intent intent = new Intent(appCompatActivity, BookNowActivity.class);
@@ -111,6 +114,9 @@ public class BookNowActivity extends AppCompatActivity implements Updatable {
                 navigateToNextStep();
             }
         });
+        txtDuration = findViewById(R.id.tvDuration);
+        txtPricePerHour = findViewById(R.id.tvPricePerHour);
+        txtTotalPrice = findViewById(R.id.tvTotalPrice);
     }
 
     private void navigateToNextStep() {
@@ -143,8 +149,12 @@ public class BookNowActivity extends AppCompatActivity implements Updatable {
                 booking_step_number += 1;
             }
         } else if (booking_step_number == 4) {
-            searchByPhone();
+            addAppointmentWithVendor();
         }
+    }
+
+    private void addAppointmentWithVendor() {
+        AddAppointmentWithVendorViewModel.getInstance().addAppointment(appointmentDetails, userInfo, this, this);
     }
 
     private void searchByPhone() {
@@ -154,7 +164,11 @@ public class BookNowActivity extends AppCompatActivity implements Updatable {
 
     @Override
     public void onBackPressed() {
-        back();
+        if (booking_step_number == 4) {
+            this.finish();
+        } else {
+            back();
+        }
     }
 
     private void back() {
@@ -204,9 +218,48 @@ public class BookNowActivity extends AppCompatActivity implements Updatable {
                 Toast.makeText(this, "Appointment added", Toast.LENGTH_LONG).show();
                 this.finish();
                 break;
+
+            case ADD_APPOINTMENT_WITH_VENDOR:
+                showRefNo();
+                break;
         }
     }
 
+    private void showRefNo() {
+
+        Utils.displayNextActivityFinish(this, RefNoActivity.class);
+    }
+
+    public void calcPrice(int hours_num, int cleaners_num, String durationStr) {
+        int total_price = 0, price_per_hour = 0;
+
+        if (hours_num == 2) {
+
+            total_price = (hours_num * cleaners_num * 50);
+
+            price_per_hour = cleaners_num * 50;
+
+        } else if (hours_num == 3) {
+
+            total_price = hours_num * cleaners_num * 40;
+
+            price_per_hour = cleaners_num * 40;
+
+        } else {
+
+            total_price = hours_num * cleaners_num * 30;
+
+            price_per_hour = cleaners_num * 30;
+
+        }
+
+        txtTotalPrice.setText(getString(R.string.price_currency, total_price));
+        txtPricePerHour.setText(getString(R.string.price_per_hour_currency, price_per_hour));
+        txtDuration.setText(durationStr);
+
+        appointmentDetails.setPrice(String.valueOf(total_price));
+
+    }
     @Override
     public void onFailure() {
 

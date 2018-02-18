@@ -2,6 +2,7 @@ package com.nayra.gowhite.network;
 
 import com.nayra.gowhite.model.LoginResponse;
 import com.nayra.gowhite.view_model.AddAppointmentViewModel;
+import com.nayra.gowhite.view_model.AddAppointmentWithVendorViewModel;
 import com.nayra.gowhite.view_model.GetAreasViewModel;
 import com.nayra.gowhite.view_model.GetCitiesViewModel;
 import com.nayra.gowhite.view_model.GetCountriesViewModel;
@@ -56,6 +57,17 @@ public interface ApiServices {
                                                  @Field("Amount") int amount, @Field("WantCleaningMatrial") int wantCleaningMaterials,
                                                  @Field("CleaningInstructions") String cleaningInstructions, @Field("AreaID") int areaId,
                                                  @Field("CityID") int cityId, @Field("PhoneNumber") String phoneNumber);
+
+
+    @FormUrlEncoded
+    @POST("api/Appointments/vendor")
+    Call<AddAppointmentWithVendorViewModel> addAppointmentWithVendor(@Field("Type") int type, @Field("StartDate") String date,
+                                                                     @Field("Address") String address, @Field("Duration") int duration,
+                                                                     @Field("Amount") int amount, @Field("PaymentMethod") int paymentMethod, @Field("WantCleaningMatrial") boolean wantCleaningMaterials,
+                                                                     @Field("CleaningInstructions") String cleaningInstructions, @Field("AreaID") int areaId,
+                                                                     @Field("CityID") int cityId, @Field("PhoneNumber") String phoneNumber,
+                                                                     @Field("email") String email, @Field("FirstName") String firstName,
+                                                                     @Field("LastName") String lastName);
 
 
 }

@@ -2,6 +2,7 @@ package com.nayra.gowhite.book_now;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.TextInputLayout;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -50,6 +51,8 @@ public class ContactDetailsFragment extends Fragment implements Updatable /*impl
     private String name;
     private String surname;
     private String email, password;
+
+    private TextInputLayout passwordTextInputLayout, emailTextInputLayout;
 
     @Nullable
     @Override
@@ -175,6 +178,10 @@ public class ContactDetailsFragment extends Fragment implements Updatable /*impl
 
         eTxtPassword = view.findViewById(R.id.etPassword);
 
+        passwordTextInputLayout = view.findViewById(R.id.tilPassword);
+
+        emailTextInputLayout = view.findViewById(R.id.tilEmail);
+
     }
 
     /*@Override
@@ -243,14 +250,14 @@ public class ContactDetailsFragment extends Fragment implements Updatable /*impl
 
         if (email.isEmpty() || !Utils.isValidEmail(email)) {
             //ErrorUtils.setEditTextError(getActivity(), eTxtEmail);
-
-            eTxtEmail.setError(getResources().getString(R.string.error_is_valid_email));
-
+            //eTxtEmail.setError(getResources().getString(R.string.error_is_valid_email));
+            emailTextInputLayout.setError(getResources().getString(R.string.error_is_valid_email));
             canNavigate = false;
         }
 
         if (password.isEmpty() || password.length() < 6) {
-            eTxtPassword.setError(getResources().getString(R.string.error_password_msg));
+            passwordTextInputLayout.setError(getResources().getString(R.string.error_password_msg));
+            //eTxtPassword.setError(getResources().getString(R.string.error_password_msg));
             canNavigate = false;
         }
 

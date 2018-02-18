@@ -64,7 +64,7 @@ public class DateTimeFragment extends Fragment {
 
     public void getDateAndTimeDetails() {
         final long milliseconds = binding.calendarView.getSelectedDate().getCalendar().getTimeInMillis();
-        String date = Utils.getDate(milliseconds, "dd-MM-yyyy");
+        String date = Utils.getDate(milliseconds, "MM-dd-yyyy");
         date += " " + selected_time;
         BookNowActivity.appointmentDetails.setStartDate(date);
     }

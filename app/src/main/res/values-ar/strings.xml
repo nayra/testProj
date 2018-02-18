@@ -58,5 +58,17 @@
     <string name="reserve">إتمام الحجز</string>
     <string name="no_internet_connection">لا يوجد اتصال بالإنترنت</string>
     <string name="error_password_msg">كلمة المرور يجب الا تقل عن ٦ حروف او ارقام</string>
-    <string name="error_is_valid_email">ادخل بريد الكترةني صحيح</string>
+    <string name="error_is_valid_email">ادخل بريد الكتروني صحيح</string>
+
+
+    <string name="commitment">ننوه إلى أننا سنبذل كل ما بوسعنا للوصول في الوقت المناسب\n٬ و بشكل عام٬ قد يحدث تأخير يصل لـ ٤٥ دقيقة بسبب الازدحام\n٬ لكننا سنقوم بإتمام عدد ساعات جلسة التنظيف بدءاً من توقيت الوصول</string>
+
+    <string name="your_code">رقمك الخاص هو:</string>
+    <string name="done">تم</string>
+
+
+    <string name="price_currency">%d درهم</string>
+    <string name="price_per_hour_currency">(%d درهم/ساعة)</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
 </resources>

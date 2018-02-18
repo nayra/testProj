@@ -14,12 +14,13 @@ public class Appointment implements Parcelable {
     private String Address;
     private int Duration;
     private int amount;
-    private int payment_method;
+    private int payment_method = 1;
     private boolean wantCleaningMatrial;
     private String cleaningInstructions;
     private int areaID;
     private int cityId;
     private String PhoneNumber;
+    private String price;
 
     public Appointment() {
     }
@@ -112,21 +113,12 @@ public class Appointment implements Parcelable {
         PhoneNumber = phoneNumber;
     }
 
-    @Override
-    public String toString() {
-        return "Appointment{" +
-                "type=" + type +
-                ", StartDate='" + StartDate + '\'' +
-                ", Address='" + Address + '\'' +
-                ", Duration=" + Duration +
-                ", amount=" + amount +
-                ", payment_method=" + payment_method +
-                ", wantCleaningMatrial=" + wantCleaningMatrial +
-                ", cleaningInstructions='" + cleaningInstructions + '\'' +
-                ", areaID=" + areaID +
-                ", cityId=" + cityId +
-                ", PhoneNumber='" + PhoneNumber + '\'' +
-                '}';
+    public String getPrice() {
+        return price;
+    }
+
+    public void setPrice(String price) {
+        this.price = price;
     }
 
 
@@ -148,6 +140,7 @@ public class Appointment implements Parcelable {
         dest.writeInt(this.areaID);
         dest.writeInt(this.cityId);
         dest.writeString(this.PhoneNumber);
+        dest.writeString(this.price);
     }
 
     protected Appointment(Parcel in) {
@@ -162,6 +155,7 @@ public class Appointment implements Parcelable {
         this.areaID = in.readInt();
         this.cityId = in.readInt();
         this.PhoneNumber = in.readString();
+        this.price = in.readString();
     }
 
     public static final Creator<Appointment> CREATOR = new Creator<Appointment>() {
@@ -175,4 +169,22 @@ public class Appointment implements Parcelable {
             return new Appointment[size];
         }
     };
+
+    @Override
+    public String toString() {
+        return "Appointment{" +
+                "type=" + type +
+                ", StartDate='" + StartDate + '\'' +
+                ", Address='" + Address + '\'' +
+                ", Duration=" + Duration +
+                ", amount=" + amount +
+                ", payment_method=" + payment_method +
+                ", wantCleaningMatrial=" + wantCleaningMatrial +
+                ", cleaningInstructions='" + cleaningInstructions + '\'' +
+                ", areaID=" + areaID +
+                ", cityId=" + cityId +
+                ", PhoneNumber='" + PhoneNumber + '\'' +
+                ", price='" + price + '\'' +
+                '}';
+    }
 }

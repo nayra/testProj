@@ -30,12 +30,14 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/tvTotalPrice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 tools:text="148 AED" />
 
             <TextView
+                android:id="@+id/tvPricePerHour"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 tools:text="37 per hour" />

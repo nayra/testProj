@@ -15,9 +15,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".SplashActivity"
-            android:theme="@style/AppTheme">
-
-        </activity>
+            android:theme="@style/AppTheme"></activity>
         <activity
             android:name=".home.HomeActivity"
             android:theme="@style/AppTheme">
@@ -30,9 +28,9 @@
         <activity
             android:name=".book_now.BookNowActivity"
             android:theme="@style/AppTheme" />
-
         <activity android:name=".authentication.LoginActivity" />
-        <activity android:name=".my_account.MyAccountActivity"></activity>
+        <activity android:name=".my_account.MyAccountActivity" />
+        <activity android:name=".book_now.RefNoActivity"></activity>
     </application>
 
 </manifest>

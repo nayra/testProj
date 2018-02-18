@@ -63,11 +63,17 @@ public class OrderSummaryFragment extends Fragment {
 
         binding.tvAmount.setText(String.valueOf(appointment.getAmount()));
 
-        binding.tvPrice.setText("PRICE");
+        binding.tvPrice.setText(appointment.getPrice());
 
         binding.tvName.setText(userInfo.getName());
 
-        binding.tvAmount.setText(userInfo.getAddress());
+        binding.tvAddress.setText(appointment.getAddress());
+
+        if (appointment.isWantCleaningMatrial()) {
+            binding.tvMaterials.setText(R.string.yes);
+        } else {
+            binding.tvMaterials.setText(R.string.no);
+        }
 
         binding.tvCity.setText(SharedPrefsUtil.getString(SharedPrefsUtil.SELECTED_CITY_NAME));
         binding.tvArea.setText(SharedPrefsUtil.getString(SharedPrefsUtil.SELECTED_AREA_NAME));

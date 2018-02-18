@@ -20,7 +20,7 @@ import com.nayra.gowhite.databinding.FragmentCleaningDetailsBinding;
 public class CleaningDetailsFragment extends Fragment {
     private FragmentCleaningDetailsBinding binding;
 
-    private int selected_repetition = 1, selected_duration = 1, selected_number_cleaner = 1;
+    private int selected_repetition = 1, selected_duration = 2, selected_number_cleaner = 1;
     private boolean isNeedMaterials = false;
 
     @Nullable
@@ -47,10 +47,13 @@ public class CleaningDetailsFragment extends Fragment {
             }
         });
 
+        final String[] durationsArr = getActivity().getResources().getStringArray(R.array.durations);
+
         binding.spDuration.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 selected_duration = i + 2;
+                ((BookNowActivity) getActivity()).calcPrice(selected_duration, selected_number_cleaner, durationsArr[i]);
             }
 
             @Override
@@ -63,6 +66,7 @@ public class CleaningDetailsFragment extends Fragment {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 selected_number_cleaner = i + 1;
+                ((BookNowActivity) getActivity()).calcPrice(selected_duration, selected_number_cleaner, durationsArr[selected_duration - 2]);
             }
 
             @Override

@@ -7,5 +7,5 @@ package com.nayra.gowhite.interfaces;
 public enum WebServices {
     COUNTRIES,
     CITIES,
-    SEARCH, REGISTER, ADD_APPOINTMENT, AREAS
+    SEARCH, REGISTER, ADD_APPOINTMENT, ADD_APPOINTMENT_WITH_VENDOR, AREAS
 }
