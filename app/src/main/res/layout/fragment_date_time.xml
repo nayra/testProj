@@ -4,7 +4,8 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@android:color/white">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -15,10 +16,12 @@
             android:gravity="center_horizontal">
 
 
-            <CalendarView
+            <com.prolificinteractive.materialcalendarview.MaterialCalendarView xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/calendarView"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"></CalendarView>
+                android:layout_height="wrap_content"
+                app:mcv_showOtherDates="all"
+                app:mcv_selectionColor="@color/colorPrimary" />
 
 
             <TextView
@@ -27,7 +30,8 @@
                 android:gravity="center_horizontal"
                 android:padding="10dp"
                 tools:text="@string/cleaning_time"
-                android:visibility="visible" />
+                android:visibility="visible"
+                android:background="@android:color/white" />
 
             <Spinner
                 android:id="@+id/spTimes"

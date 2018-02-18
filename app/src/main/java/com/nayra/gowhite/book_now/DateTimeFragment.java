@@ -12,6 +12,7 @@ import android.widget.AdapterView;
 import com.nayra.gowhite.R;
 import com.nayra.gowhite.databinding.FragmentDateTimeBinding;
 import com.nayra.gowhite.utils.Utils;
+import com.prolificinteractive.materialcalendarview.CalendarMode;
 
 import java.util.Calendar;
 /**
@@ -33,8 +34,13 @@ public class DateTimeFragment extends Fragment {
 
     private void initView() {
         final Calendar calendar = Calendar.getInstance();
-        binding.calendarView.setDate(calendar.getTimeInMillis());
-        binding.calendarView.setMinDate(calendar.getTimeInMillis());
+
+        binding.calendarView.setDateSelected(calendar, true);
+        binding.calendarView.state().edit()
+                .setMinimumDate(calendar)
+                .setCalendarDisplayMode(CalendarMode.MONTHS)
+                .commit();
+
 
         final String[] times = getActivity().getResources().getStringArray(R.array.times);
         binding.spTimes.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -57,7 +63,7 @@ public class DateTimeFragment extends Fragment {
 
 
     public void getDateAndTimeDetails() {
-        final long milliseconds = binding.calendarView.getDate();
+        final long milliseconds = binding.calendarView.getSelectedDate().getCalendar().getTimeInMillis();
         String date = Utils.getDate(milliseconds, "dd-MM-yyyy");
         date += " " + selected_time;
         BookNowActivity.appointmentDetails.setStartDate(date);
