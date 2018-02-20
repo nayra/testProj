@@ -52,10 +52,34 @@ public class AddAppointmentWithVendorViewModel {
                 boolean isWantMaterials = appointment.isWantCleaningMatrial();
 
 
-                final Call<AddAppointmentWithVendorViewModel> call = apiService.addAppointmentWithVendor(appointment.getType(), appointment.getStartDate(),
-                        appointment.getAddress(), appointment.getDuration(), appointment.getAmount(), appointment.getPayment_method(), isWantMaterials, appointment.getCleaningInstructions(),
-                        appointment.getAreaID(), appointment.getCityId(), appointment.getPhoneNumber(), userInfo.getEmail(), userInfo.getName(), userInfo.getSurname());
+                final Call<AddAppointmentWithVendorViewModel> call = apiService.addAppointmentWithVendor(
+                        appointment.getType(),
+                        appointment.getStartDate(),
+                        appointment.getAddress(),
+                        String.valueOf(appointment.getDuration()),
+                        Integer.parseInt(appointment.getPrice()),
+                        appointment.getPayment_method(),
+                        isWantMaterials,
+                        appointment.getCleaningInstructions(),
+                        appointment.getAreaID(),
+                        appointment.getCityId(),
+                        appointment.getPhoneNumber(),
+                        userInfo.getEmail(),
+                        userInfo.getName(),
+                        userInfo.getSurname(),
+                        Constants.AUTH_BEARER);
 
+                /*
+                (@Field("Type") int type, @Field("StartDate") String date,
+                @Field("Address") String address, @Field("Duration") int duration,
+                @Field("Amount") int amount, @Field("PaymentMethod") int paymentMethod,
+                @Field("WantCleaningMatrial") boolean wantCleaningMaterials,
+                @Field("CleaningInstructions") String cleaningInstructions, @Field("AreaID") int areaId,
+                @Field("CityID") int cityId, @Field("PhoneNumber") String phoneNumber,
+                @Field("email") String email, @Field("FirstName") String firstName,
+                @Field("LastName") String lastName);
+
+                 */
                 call.enqueue(new Callback<AddAppointmentWithVendorViewModel>() {
                     @Override
                     public void onResponse(Call<AddAppointmentWithVendorViewModel> call, Response<AddAppointmentWithVendorViewModel> response) {
@@ -71,7 +95,7 @@ public class AddAppointmentWithVendorViewModel {
 
                     @Override
                     public void onFailure(Call<AddAppointmentWithVendorViewModel> call, Throwable t) {
-                        Log.e(TAG, "failure");
+                        Log.e(TAG, "failure " + t.toString());
 
                         ProgressUtils.dismiss();
                     }

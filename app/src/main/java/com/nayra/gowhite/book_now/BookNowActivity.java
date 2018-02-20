@@ -215,7 +215,7 @@ public class BookNowActivity extends AppCompatActivity implements Updatable {
                 break;
 
             case ADD_APPOINTMENT:
-                Toast.makeText(this, "Appointment added", Toast.LENGTH_LONG).show();
+                //  Toast.makeText(this, "Appointment added", Toast.LENGTH_LONG).show();
                 this.finish();
                 break;
 
