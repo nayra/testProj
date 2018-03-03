@@ -12,15 +12,12 @@ import com.nayra.gowhite.R;
 import com.nayra.gowhite.authentication.LoginActivity;
 import com.nayra.gowhite.book_now.BookNowActivity;
 import com.nayra.gowhite.databinding.HomeMainBinding;
-import com.nayra.gowhite.interfaces.Updatable;
-import com.nayra.gowhite.interfaces.WebServices;
 import com.nayra.gowhite.utils.DialogUtils;
 import com.nayra.gowhite.utils.LanguageUtil;
 import com.nayra.gowhite.utils.SharedPrefsUtil;
 import com.nayra.gowhite.utils.Utils;
-import com.nayra.gowhite.view_model.GetCountriesViewModel;
 
-public class HomeActivity extends AppCompatActivity implements SharedPreferences.OnSharedPreferenceChangeListener, Updatable {
+public class HomeActivity extends AppCompatActivity implements SharedPreferences.OnSharedPreferenceChangeListener /*,Updatable*/ {
 
     private HomeMainBinding binding;
     private boolean isLoggedIn;
@@ -38,7 +35,7 @@ public class HomeActivity extends AppCompatActivity implements SharedPreferences
 
         initUI();
 
-        loadApis();
+        //loadApis();
 
     }
 
@@ -63,7 +60,7 @@ public class HomeActivity extends AppCompatActivity implements SharedPreferences
 
         binding.btnBookedBefore.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(final View view) {
                 if (!isLoggedIn) {
                     navigateToLogin();
                 } else {
@@ -99,9 +96,10 @@ public class HomeActivity extends AppCompatActivity implements SharedPreferences
         });
     }
 
-    private void loadApis() {
+    /*private void loadApis() {
         GetCountriesViewModel.getInstance().getCountries(this, this);
     }
+    */
     @Override
     public void onSharedPreferenceChanged(final SharedPreferences sharedPreferences, final String s) {
         if (s.equalsIgnoreCase(SharedPrefsUtil.IS_LOGGED_IN)) {
@@ -109,9 +107,9 @@ public class HomeActivity extends AppCompatActivity implements SharedPreferences
         }
     }
 
-    @Override
-    public void update(WebServices api) {
-        int current_id = SharedPrefsUtil.getInteger(SharedPrefsUtil.SELECTED_COUNTRY_ID);
+    /*@Override
+    public void update(final WebServices api) {
+        final int current_id = SharedPrefsUtil.getInteger(SharedPrefsUtil.SELECTED_COUNTRY_ID);
         if (current_id == 0 && GetCountriesViewModel.getInstance().getCountries().size() > 0) {
             SharedPrefsUtil.setInteger(SharedPrefsUtil.SELECTED_COUNTRY_ID, GetCountriesViewModel.getInstance().getCountries().get(0).getCountryID());
         }
@@ -123,5 +121,5 @@ public class HomeActivity extends AppCompatActivity implements SharedPreferences
         // the Api is not stable
         // After api fix , should remove the whole interface implementation
         loadApis();
-    }
+    }*/
 }

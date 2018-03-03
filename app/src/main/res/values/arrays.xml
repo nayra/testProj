@@ -2,8 +2,8 @@
 <resources>
     <array name="countries">
         <item>United Arab Emirates</item>
-        <item>Qatar</item>
-        <item>Bahrain</item>
+        <!--<item>Qatar</item>
+        <item>Bahrain</item>-->
     </array>
 
     <array name="emirates_cities">

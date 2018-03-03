@@ -3,17 +3,13 @@ package com.nayra.gowhite.utils;
 import android.content.Context;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 
 import com.nayra.gowhite.R;
-import com.nayra.gowhite.adapters.SpinnerCountryCustomAdapter;
-import com.nayra.gowhite.model.Country;
-import com.nayra.gowhite.view_model.GetCountriesViewModel;
 import com.orhanobut.dialogplus.DialogPlus;
 import com.orhanobut.dialogplus.ViewHolder;
-
-import java.util.ArrayList;
 
 /**
  * Created by nayrael-sayed on 2/15/18.
@@ -28,11 +24,14 @@ public class DialogUtils {
 
     private static int new_selected_country_id = 0;
 
-    private static ArrayList<Country> countries = new ArrayList<>();
+    // private static ArrayList<Country> countries = new ArrayList<>();
     public static void showChooseLanguageAndAreaDialog(final Context context) {
-        countries = GetCountriesViewModel.getInstance().getCountries();
+        final String[] countries = context.getResources().getStringArray(R.array.countries);
 
-        final SpinnerCountryCustomAdapter adapter = new SpinnerCountryCustomAdapter(context, countries);
+        // countries = GetCountriesViewModel.getInstance().getCountries();
+
+        //final SpinnerCountryCustomAdapter adapter = new SpinnerCountryCustomAdapter(context, countries);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(context, R.layout.row_spinner, countries);
 
         current_selected_country_index = SharedPrefsUtil.getInteger(SharedPrefsUtil.SELECTED_COUNTRY_INDEX);
         current_selected_language_index = SharedPrefsUtil.getInteger(SharedPrefsUtil.SELECTED_LANGUAGE_INDEX);
@@ -46,7 +45,7 @@ public class DialogUtils {
             @Override
             public void onItemSelected(final AdapterView<?> adapterView, final View view, final int i, final long l) {
                 new_selected_country_index = i;
-                new_selected_country_id = countries.get(i).getCountryID();
+                new_selected_country_id = 1;//countries.get(i).getCountryID();
             }
 
             @Override

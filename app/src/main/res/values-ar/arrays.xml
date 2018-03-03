@@ -2,8 +2,8 @@
 <resources>
     <array name="countries">
         <item>الإمارات العربية المتحدة</item>
-        <item>قطر</item>
-        <item>البحرين</item>
+        <!--  <item>قطر</item>
+          <item>البحرين</item>-->
     </array>
 
     <array name="emirates_cities">
