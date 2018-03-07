@@ -87,7 +87,12 @@ public class HomeActivity extends AppCompatActivity implements SharedPreferences
                 DialogUtils.showChooseLanguageAndAreaDialog(HomeActivity.this);
             }
         });
-
+        int langIndex = SharedPrefsUtil.getInteger(SharedPrefsUtil.SELECTED_LANGUAGE_INDEX);
+        if (langIndex == 0) {
+            changeLanguageButton.setBackgroundResource(R.drawable.ic_en);
+        } else {
+            changeLanguageButton.setBackgroundResource(R.drawable.ic_ar);
+        }
         final ImageButton callButton = toolbar.findViewById(R.id.imgBtnCall);
         callButton.setOnClickListener(new View.OnClickListener() {
             @Override

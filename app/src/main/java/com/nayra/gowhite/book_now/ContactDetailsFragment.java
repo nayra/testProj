@@ -14,7 +14,7 @@ import android.widget.Spinner;
 import com.nayra.gowhite.R;
 import com.nayra.gowhite.adapters.SpinnerAreaCustomAdapter;
 import com.nayra.gowhite.adapters.SpinnerCityCustomAdapter;
-import com.nayra.gowhite.custom_views.MyEditText;
+import com.nayra.gowhite.custom_views.MyErrorEditText;
 import com.nayra.gowhite.interfaces.Updatable;
 import com.nayra.gowhite.interfaces.WebServices;
 import com.nayra.gowhite.model.Area;
@@ -37,13 +37,13 @@ public class ContactDetailsFragment extends Fragment implements Updatable /*impl
     //private static final String EMAIL = "email";
     private Spinner citySpinner, areaSpinner;
 
-    private MyEditText eTxtPhone, eTxtAddress;
+    private MyErrorEditText eTxtPhone, eTxtAddress;
 
     //private LinearLayout notLoggedInLinearLayout;
     //private boolean isLoggedIn = false;
 
     private int cityId = 1, areaId = 1;
-    private MyEditText eTxtName, eTxtSurName;
+    private MyErrorEditText eTxtName, eTxtSurName;
     private EditText eTxtPassword, eTxtEmail;
 
     private String phone;
@@ -78,6 +78,7 @@ public class ContactDetailsFragment extends Fragment implements Updatable /*impl
         final ArrayList<City> cities = GetCitiesViewModel.getInstance().getCities();
 
         final SpinnerCityCustomAdapter adapter = new SpinnerCityCustomAdapter(getActivity(), cities);
+
         citySpinner.setAdapter(adapter);
 
         citySpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {

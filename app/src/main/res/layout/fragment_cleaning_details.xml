@@ -60,7 +60,7 @@
                     android:background="@android:color/darker_gray"
                     android:layout_margin="5dp" />
 
-                <Switch
+                <com.nayra.gowhite.custom_views.MySwitch
                     android:id="@+id/swMaterial"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -74,19 +74,19 @@
                     android:background="@android:color/darker_gray"
                     android:layout_margin="5dp" />
 
-                <android.support.design.widget.TextInputLayout
+                <com.nayra.gowhite.custom_views.MyTextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:hint="@string/cleaning_instructions">
 
-                    <com.nayra.gowhite.custom_views.MyEditText
+                    <com.nayra.gowhite.custom_views.MyErrorEditText
                         android:id="@+id/etCleaningInstruction"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:maxLines="1"
                         android:padding="10dp" />
 
-                </android.support.design.widget.TextInputLayout>
+                </com.nayra.gowhite.custom_views.MyTextInputLayout>
 
             </LinearLayout>
         </ScrollView>

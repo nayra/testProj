@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.CompoundButton;
 
 import com.nayra.gowhite.R;
@@ -35,49 +36,61 @@ public class CleaningDetailsFragment extends Fragment {
     }
 
     private void initUI() {
+        final String[] repetition = getResources().getStringArray(R.array.Repetition);
+        final ArrayAdapter<String> repetitionAdapter = new ArrayAdapter<>(getActivity(), R.layout.row_spinner, repetition);
+        repetitionAdapter.setDropDownViewResource(R.layout.row_spinner);
+        binding.spRepetition.setAdapter(repetitionAdapter);
         binding.spRepetition.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+            public void onItemSelected(final AdapterView<?> adapterView, final View view, final int i, final long l) {
                 selected_repetition = i + 1;
             }
 
             @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
+            public void onNothingSelected(final AdapterView<?> adapterView) {
                 selected_repetition = 1;
             }
         });
 
         final String[] durationsArr = getActivity().getResources().getStringArray(R.array.durations);
-
+        final ArrayAdapter<String> durationAdapter = new ArrayAdapter<>(getActivity(), R.layout.row_spinner, durationsArr);
+        durationAdapter.setDropDownViewResource(R.layout.row_spinner);
+        binding.spDuration.setAdapter(durationAdapter);
         binding.spDuration.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+            public void onItemSelected(final AdapterView<?> adapterView, final View view, final int i, final long l) {
                 selected_duration = i + 2;
                 ((BookNowActivity) getActivity()).calcPrice(selected_duration, selected_number_cleaner, durationsArr[i]);
             }
 
             @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
+            public void onNothingSelected(final AdapterView<?> adapterView) {
                 selected_duration = 2;
             }
         });
 
+
+        final String[] cleanerArr = getActivity().getResources().getStringArray(R.array.number_cleaners);
+        final ArrayAdapter<String> cleanerAdapter = new ArrayAdapter<>(getActivity(), R.layout.row_spinner, cleanerArr);
+        cleanerAdapter.setDropDownViewResource(R.layout.row_spinner);
+        binding.spCleaners.setAdapter(cleanerAdapter);
         binding.spCleaners.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+            public void onItemSelected(final AdapterView<?> adapterView, final View view, final int i, final long l) {
                 selected_number_cleaner = i + 1;
                 ((BookNowActivity) getActivity()).calcPrice(selected_duration, selected_number_cleaner, durationsArr[selected_duration - 2]);
             }
 
             @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
+            public void onNothingSelected(final AdapterView<?> adapterView) {
                 selected_number_cleaner = 1;
             }
         });
 
+
         binding.swMaterial.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+            public void onCheckedChanged(final CompoundButton compoundButton, final boolean b) {
                 isNeedMaterials = b;
             }
         });

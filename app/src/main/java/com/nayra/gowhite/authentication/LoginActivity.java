@@ -6,13 +6,13 @@ import android.view.View;
 import android.widget.Button;
 
 import com.nayra.gowhite.R;
-import com.nayra.gowhite.custom_views.MyEditText;
+import com.nayra.gowhite.custom_views.MyErrorEditText;
 import com.nayra.gowhite.utils.ErrorUtils;
 import com.nayra.gowhite.view_model.GetTokenViewModel;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private MyEditText etxtEmail, etxtPassword;
+    private MyErrorEditText etxtEmail, etxtPassword;
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {

@@ -24,7 +24,7 @@
                 app:mcv_selectionColor="@color/colorPrimary" />
 
 
-            <TextView
+            <com.nayra.gowhite.custom_views.MyTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"

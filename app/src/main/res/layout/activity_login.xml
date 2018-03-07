@@ -19,26 +19,26 @@
             android:orientation="vertical"
             tools:context="com.nayra.gowhite.authentication.LoginActivity">
 
-            <android.support.design.widget.TextInputLayout
+            <com.nayra.gowhite.custom_views.MyTextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/email">
 
-                <com.nayra.gowhite.custom_views.MyEditText
+                <com.nayra.gowhite.custom_views.MyErrorEditText
                     android:id="@+id/etEmailLogin"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textEmailAddress"
                     android:layout_margin="5dp" />
 
-            </android.support.design.widget.TextInputLayout>
+            </com.nayra.gowhite.custom_views.MyTextInputLayout>
 
-            <android.support.design.widget.TextInputLayout
+            <com.nayra.gowhite.custom_views.MyTextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/password">
 
-                <com.nayra.gowhite.custom_views.MyEditText
+                <com.nayra.gowhite.custom_views.MyErrorEditText
                     android:id="@+id/etPasswordLogin"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -46,10 +46,10 @@
                     android:layout_margin="5dp"
                     android:hint="@string/password" />
 
-            </android.support.design.widget.TextInputLayout>
+            </com.nayra.gowhite.custom_views.MyTextInputLayout>
 
 
-            <Button
+            <com.nayra.gowhite.custom_views.MyButton
                 android:id="@+id/btn_login"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

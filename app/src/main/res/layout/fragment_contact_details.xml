@@ -18,7 +18,7 @@
             android:orientation="vertical"
             android:visibility="gone">
 
-            <TextView
+            <com.nayra.gowhite.custom_views.MyTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/blue_link"
@@ -39,7 +39,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center" />-->
 
-                <Button
+                <com.nayra.gowhite.custom_views.MyButton
                     android:layout_width="0dp"
                     android:layout_height="38dp"
                     android:layout_weight="0.5"
@@ -49,34 +49,34 @@
         </LinearLayout>
 
 
-        <android.support.design.widget.TextInputLayout
+        <com.nayra.gowhite.custom_views.MyTextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/name">
 
-            <com.nayra.gowhite.custom_views.MyEditText
+            <com.nayra.gowhite.custom_views.MyErrorEditText
                 android:id="@+id/etName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName" />
 
-        </android.support.design.widget.TextInputLayout>
+        </com.nayra.gowhite.custom_views.MyTextInputLayout>
 
 
-        <android.support.design.widget.TextInputLayout
+        <com.nayra.gowhite.custom_views.MyTextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/surname">
 
-            <com.nayra.gowhite.custom_views.MyEditText
+            <com.nayra.gowhite.custom_views.MyErrorEditText
                 android:id="@+id/etSurname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName" />
 
-        </android.support.design.widget.TextInputLayout>
+        </com.nayra.gowhite.custom_views.MyTextInputLayout>
 
-        <android.support.design.widget.TextInputLayout
+        <com.nayra.gowhite.custom_views.MyTextInputLayout
             android:id="@+id/tilEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -88,35 +88,35 @@
                 android:layout_height="wrap_content"
                 android:inputType="textEmailAddress" />
 
-        </android.support.design.widget.TextInputLayout>
+        </com.nayra.gowhite.custom_views.MyTextInputLayout>
 
-        <android.support.design.widget.TextInputLayout
+        <com.nayra.gowhite.custom_views.MyTextInputLayout
             android:id="@+id/tilPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/password">
 
-            <com.nayra.gowhite.custom_views.MyEditText
+            <com.nayra.gowhite.custom_views.MyErrorEditText
                 android:id="@+id/etPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword" />
 
-        </android.support.design.widget.TextInputLayout>
+        </com.nayra.gowhite.custom_views.MyTextInputLayout>
 
 
-        <android.support.design.widget.TextInputLayout
+        <com.nayra.gowhite.custom_views.MyTextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/phone">
 
-            <com.nayra.gowhite.custom_views.MyEditText
+            <com.nayra.gowhite.custom_views.MyErrorEditText
                 android:id="@+id/etPhone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="phone" />
 
-        </android.support.design.widget.TextInputLayout>
+        </com.nayra.gowhite.custom_views.MyTextInputLayout>
 
         <Spinner
             android:id="@+id/spCities"
@@ -139,31 +139,31 @@
             android:padding="10dp"
             android:spinnerMode="dialog"></Spinner>
 
-        <android.support.design.widget.TextInputLayout
+        <com.nayra.gowhite.custom_views.MyTextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/full_address">
 
-            <com.nayra.gowhite.custom_views.MyEditText
+            <com.nayra.gowhite.custom_views.MyErrorEditText
                 android:id="@+id/etAddress"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text" />
 
-        </android.support.design.widget.TextInputLayout>
+        </com.nayra.gowhite.custom_views.MyTextInputLayout>
 
-        <android.support.design.widget.TextInputLayout
+        <com.nayra.gowhite.custom_views.MyTextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/HowIn">
 
-            <com.nayra.gowhite.custom_views.MyEditText
+            <com.nayra.gowhite.custom_views.MyErrorEditText
                 android:id="@+id/etHowCleanerIn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text" />
 
-        </android.support.design.widget.TextInputLayout>
+        </com.nayra.gowhite.custom_views.MyTextInputLayout>
 
 
     </LinearLayout>

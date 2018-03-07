@@ -6,7 +6,7 @@
     android:layout_margin="5dp">
 
 
-    <TextView
+    <com.nayra.gowhite.custom_views.MyTextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -34,7 +34,7 @@
     </Spinner>
 
 
-    <Button
+    <com.nayra.gowhite.custom_views.MyButton
         android:id="@+id/btnChange"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

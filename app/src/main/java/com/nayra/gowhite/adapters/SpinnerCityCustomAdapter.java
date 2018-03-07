@@ -61,4 +61,19 @@ public class SpinnerCityCustomAdapter extends BaseAdapter {
 
         return view;
     }
+
+    @Override
+    public View getDropDownView(int i, View convertView, ViewGroup parent) {
+        View view = layoutInflater.inflate(R.layout.row_spinner, null);
+
+        TextView names = view.findViewById(R.id.textView);
+
+        if (selected_lang_index == 0)
+            names.setText(cities.get(i).getEn_name());
+        else {
+            names.setText(cities.get(i).getAr_name());
+        }
+
+        return view;
+    }
 }

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#33DDFF</color>
-    <color name="colorPrimaryDark">#33DDFF</color>
-    <color name="colorAccent">#33DDFF</color>
+    <color name="colorPrimary">#dc78aa</color>
+    <color name="colorPrimaryDark">#dc78aa</color>
+    <color name="colorAccent">#dc78aa</color>
 
-    <color name="blue_button_transparent">#8033DDFF</color>
+    <color name="pink_button_transparent">#AAdc78aa</color>
     <color name="grey_button_transparent">#90CCCCCC</color>
 
     <color name="blue_link">#0000FF</color>

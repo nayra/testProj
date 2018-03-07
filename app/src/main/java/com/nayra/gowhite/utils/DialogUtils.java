@@ -31,7 +31,8 @@ public class DialogUtils {
         // countries = GetCountriesViewModel.getInstance().getCountries();
 
         //final SpinnerCountryCustomAdapter adapter = new SpinnerCountryCustomAdapter(context, countries);
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(context, R.layout.row_spinner, countries);
+        final ArrayAdapter<String> adapter = new ArrayAdapter<>(context, R.layout.row_spinner, countries);
+        adapter.setDropDownViewResource(R.layout.row_spinner);
 
         current_selected_country_index = SharedPrefsUtil.getInteger(SharedPrefsUtil.SELECTED_COUNTRY_INDEX);
         current_selected_language_index = SharedPrefsUtil.getInteger(SharedPrefsUtil.SELECTED_LANGUAGE_INDEX);
@@ -55,6 +56,11 @@ public class DialogUtils {
         countriesSpinner.setAdapter(adapter);
         countriesSpinner.setSelection(current_selected_country_index);
 
+
+        final String[] languages = context.getResources().getStringArray(R.array.languages);
+        final ArrayAdapter<String> langAdapter = new ArrayAdapter<>(context, R.layout.row_spinner, languages);
+        langAdapter.setDropDownViewResource(R.layout.row_spinner);
+
         final Spinner languagesSpinner = (Spinner) dialog.findViewById(R.id.spLanguages);
         languagesSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -68,6 +74,7 @@ public class DialogUtils {
             }
         });
         languagesSpinner.setSelection(current_selected_language_index);
+        languagesSpinner.setAdapter(langAdapter);
 
         final Button changeButton = (Button) dialog.findViewById(R.id.btnChange);
         changeButton.setOnClickListener(new View.OnClickListener() {

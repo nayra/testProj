@@ -17,7 +17,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <TextView
+                <com.nayra.gowhite.custom_views.MyTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
@@ -36,14 +36,14 @@
                     android:orientation="horizontal"
                     android:padding="5dp">
 
-                    <TextView
+                    <com.nayra.gowhite.custom_views.MyTextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:layout_margin="5dp"
                         android:text="@string/repetition" />
 
-                    <TextView
+                    <com.nayra.gowhite.custom_views.MyTextView
                         android:id="@+id/tvRepetition"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -62,14 +62,14 @@
                     android:orientation="horizontal"
                     android:padding="5dp">
 
-                    <TextView
+                    <com.nayra.gowhite.custom_views.MyTextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:layout_margin="5dp"
                         android:text="@string/date" />
 
-                    <TextView
+                    <com.nayra.gowhite.custom_views.MyTextView
                         android:id="@+id/tvDate"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -88,14 +88,14 @@
                     android:orientation="horizontal"
                     android:padding="5dp">
 
-                    <TextView
+                    <com.nayra.gowhite.custom_views.MyTextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:layout_margin="5dp"
                         android:text="@string/time" />
 
-                    <TextView
+                    <com.nayra.gowhite.custom_views.MyTextView
                         android:id="@+id/tvTime"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -114,14 +114,14 @@
                     android:orientation="horizontal"
                     android:padding="5dp">
 
-                    <TextView
+                    <com.nayra.gowhite.custom_views.MyTextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:layout_margin="5dp"
                         android:text="@string/duration" />
 
-                    <TextView
+                    <com.nayra.gowhite.custom_views.MyTextView
                         android:id="@+id/tvDuration"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -140,14 +140,14 @@
                     android:orientation="horizontal"
                     android:padding="5dp">
 
-                    <TextView
+                    <com.nayra.gowhite.custom_views.MyTextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:layout_margin="5dp"
                         android:text="@string/cleaners_num" />
 
-                    <TextView
+                    <com.nayra.gowhite.custom_views.MyTextView
                         android:id="@+id/tvAmount"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -166,14 +166,14 @@
                     android:orientation="horizontal"
                     android:padding="5dp">
 
-                    <TextView
+                    <com.nayra.gowhite.custom_views.MyTextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:layout_margin="5dp"
                         android:text="@string/cleaning_materials" />
 
-                    <TextView
+                    <com.nayra.gowhite.custom_views.MyTextView
                         android:id="@+id/tvMaterials"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -192,14 +192,14 @@
                     android:orientation="horizontal"
                     android:padding="5dp">
 
-                    <TextView
+                    <com.nayra.gowhite.custom_views.MyTextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:layout_margin="5dp"
                         android:text="@string/price" />
 
-                    <TextView
+                    <com.nayra.gowhite.custom_views.MyTextView
                         android:id="@+id/tvPrice"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -213,7 +213,7 @@
                     android:layout_height="1dp"
                     android:background="@android:color/darker_gray" />
 
-                <TextView
+                <com.nayra.gowhite.custom_views.MyTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
@@ -232,14 +232,14 @@
                     android:orientation="horizontal"
                     android:padding="5dp">
 
-                    <TextView
+                    <com.nayra.gowhite.custom_views.MyTextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:layout_margin="5dp"
                         android:text="@string/name" />
 
-                    <TextView
+                    <com.nayra.gowhite.custom_views.MyTextView
                         android:id="@+id/tvName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -258,14 +258,14 @@
                     android:orientation="horizontal"
                     android:padding="5dp">
 
-                    <TextView
+                    <com.nayra.gowhite.custom_views.MyTextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:layout_margin="5dp"
                         android:text="@string/city" />
 
-                    <TextView
+                    <com.nayra.gowhite.custom_views.MyTextView
                         android:id="@+id/tvCity"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -284,14 +284,14 @@
                     android:orientation="horizontal"
                     android:padding="5dp">
 
-                    <TextView
+                    <com.nayra.gowhite.custom_views.MyTextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:layout_margin="5dp"
                         android:text="@string/area" />
 
-                    <TextView
+                    <com.nayra.gowhite.custom_views.MyTextView
                         android:id="@+id/tvArea"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -310,14 +310,14 @@
                     android:orientation="horizontal"
                     android:padding="5dp">
 
-                    <TextView
+                    <com.nayra.gowhite.custom_views.MyTextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:layout_margin="5dp"
                         android:text="@string/address" />
 
-                    <TextView
+                    <com.nayra.gowhite.custom_views.MyTextView
                         android:id="@+id/tvAddress"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -334,7 +334,7 @@
             android:orientation="vertical"
             android:background="@color/footer_grey">
 
-            <Button
+            <com.nayra.gowhite.custom_views.MyButton
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/reserve"

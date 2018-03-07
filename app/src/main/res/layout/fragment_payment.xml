@@ -11,19 +11,19 @@
             android:orientation="vertical"
             android:layout_margin="5dp">
 
-            <android.support.design.widget.TextInputLayout
+            <com.nayra.gowhite.custom_views.MyTextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/voucher_code">
 
-                <com.nayra.gowhite.custom_views.MyEditText
+                <com.nayra.gowhite.custom_views.MyErrorEditText
                     android:id="@+id/etVoucherCode"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
-            </android.support.design.widget.TextInputLayout>
+            </com.nayra.gowhite.custom_views.MyTextInputLayout>
 
-            <Button
+            <com.nayra.gowhite.custom_views.MyButton
                 android:id="@+id/btn_apply"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -33,7 +33,7 @@
                 android:layout_margin="5dp"
                 android:layout_marginBottom="10dp" />
 
-            <Switch
+            <com.nayra.gowhite.custom_views.MySwitch
                 android:id="@+id/swPaymentMethod"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

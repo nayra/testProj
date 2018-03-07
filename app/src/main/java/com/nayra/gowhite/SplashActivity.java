@@ -7,9 +7,12 @@ import android.support.v7.app.AppCompatActivity;
 import com.nayra.gowhite.home.HomeActivity;
 import com.nayra.gowhite.utils.Utils;
 
+import pl.droidsonroids.gif.GifImageView;
+
 public class SplashActivity extends AppCompatActivity {
 
-    private static final int SPLASH_TIME_OUT = 3000;
+    private static final int SPLASH_TIME_OUT = 5400;
+    private GifImageView gifImageView;
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
@@ -17,6 +20,7 @@ public class SplashActivity extends AppCompatActivity {
         Utils.setFullScreen(this);
         setContentView(R.layout.activity_splash);
 
+        gifImageView = findViewById(R.id.gif);
 
         new Handler().postDelayed(new Runnable() {
             @Override
