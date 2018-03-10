@@ -73,4 +73,5 @@
     <string name="price_per_hour_currency">(%d درهم/ساعة)</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
+    <string name="select_country">اختر الدولة</string>
 </resources>

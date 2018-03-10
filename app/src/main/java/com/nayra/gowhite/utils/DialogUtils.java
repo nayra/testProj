@@ -73,8 +73,8 @@ public class DialogUtils {
 
             }
         });
-        languagesSpinner.setSelection(current_selected_language_index);
         languagesSpinner.setAdapter(langAdapter);
+        languagesSpinner.setSelection(current_selected_language_index);
 
         final Button changeButton = (Button) dialog.findViewById(R.id.btnChange);
         changeButton.setOnClickListener(new View.OnClickListener() {
@@ -82,6 +82,7 @@ public class DialogUtils {
             public void onClick(final View view) {
                 SharedPrefsUtil.setInteger(SharedPrefsUtil.SELECTED_COUNTRY_INDEX, new_selected_country_index);
                 SharedPrefsUtil.setInteger(SharedPrefsUtil.SELECTED_COUNTRY_ID, new_selected_country_id);
+
 
                 LanguageUtil.changeLanguage(new_selected_language_index, context);
 
