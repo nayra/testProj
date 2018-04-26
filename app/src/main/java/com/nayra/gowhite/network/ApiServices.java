@@ -69,7 +69,8 @@ public interface ApiServices {
                                                                      @Field("CityID") int cityId, @Field("PhoneNumber") String phoneNumber,
                                                                      @Field("email") String email, @Field("FirstName") String firstName,
                                                                      @Field("LastName") String lastName,
-                                                                     @Header("Authorization") String auth);
+                                                                     @Header("Authorization") String auth,
+                                                                     @Field("lang") String lang);
 
 
 }

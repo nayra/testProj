@@ -21,12 +21,14 @@ public class RetrofitClient {
      * @return retrofit object used to create the requests
      */
     public static Retrofit retrofit(final String baseUrl) {
-        retrofit = new Retrofit.Builder()
-                .baseUrl(baseUrl)
-                .client(getHttpClient())
-                .addConverterFactory(GsonConverterFactory.create())
-                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-                .build();
+        if (retrofit == null) {
+            retrofit = new Retrofit.Builder()
+                    .baseUrl(baseUrl)
+                    .client(getHttpClient())
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                    .build();
+        }
         return retrofit;
     }
 

@@ -15,6 +15,7 @@ import com.nayra.gowhite.network.ApiServices;
 import com.nayra.gowhite.network.RetrofitClient;
 import com.nayra.gowhite.utils.NetworkConnectionUtil;
 import com.nayra.gowhite.utils.ProgressUtils;
+import com.nayra.gowhite.utils.SharedPrefsUtil;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -51,6 +52,12 @@ public class AddAppointmentWithVendorViewModel {
                 final ApiServices apiService = RetrofitClient.retrofit(Constants.base_url).create(ApiServices.class);
                 boolean isWantMaterials = appointment.isWantCleaningMatrial();
 
+                int langIndex = SharedPrefsUtil.getInteger(SharedPrefsUtil.SELECTED_LANGUAGE_INDEX);
+                String lang;
+                if (langIndex == 0)
+                    lang = "en";
+                else
+                    lang = "ar";
 
                 final Call<AddAppointmentWithVendorViewModel> call = apiService.addAppointmentWithVendor(
                         appointment.getType(),
@@ -67,7 +74,8 @@ public class AddAppointmentWithVendorViewModel {
                         userInfo.getEmail(),
                         userInfo.getName(),
                         userInfo.getSurname(),
-                        Constants.AUTH_BEARER);
+                        Constants.AUTH_BEARER,
+                        lang);
 
                 /*
                 (@Field("Type") int type, @Field("StartDate") String date,
